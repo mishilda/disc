@@ -1,0 +1,9 @@
+﻿{% extends "base.html" %}
+{% block content %}
+	{% if current_user.is_anonymous %}
+	<h1>Требуется авторизация! Если Вы забыли пароль, обратитесь к администратору системы.</h1>
+	{% else %}
+	<h1>Текущий пользователь: {{ current_user.name }}!</h1>
+	<h2>Нет изменений в режиме работы.</h2>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+﻿{% extends "base.html" %}
+{% block content %}
+
+	<h1>{{ film.data.name }}</h1>
+	<table style="position:absolute; left:20px;">
+		<tr valign="top">
+			<td>
+				<p>Студия: </p>
+				<p>Год: </p>
+				<p>Длительность: </p>
+				<p>Жанр: </p>
+				<p>Количество в прокате: </p>
+				<p>В наличии: </p>
+			</td>
+			<td>
+				<p>{{ film.data.studio }}</p>
+				<p>{{ film.data.year }}</p>
+				<p>{{ film.data.duration }} минут</p>
+				<p>{{ film.data.genre }}</p>
+				<p>{{ film.data.nom_count }}</p>
+				<p>{{ film.data.fact_count }}</p>
+			<td>		
+		</tr>
+		<tr valign="top">
+			<td><a href="{{ url_for('edit_film', id=film.data.id) }}">Редактировать</a></td>
+		</tr>
+		<tr valign="top">
+			<td><a href="{{ url_for('delete_film', id=film.data.id) }}">Удалить</a></td>
+		</tr>
+	</table>
+{% endblock %}

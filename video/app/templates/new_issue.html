@@ -1,0 +1,36 @@
+﻿{% extends "base.html" %}
+{% block content %}
+	<h1>Акт выдачи</h1>
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<p>
+			{{ form.client.label }}<br>
+			{{ form.client }}
+			{% for error in form.client.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.film.label }}<br>
+			{{ form.film }}
+			{% for error in form.film.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.weeks.label }}<br>
+			{{ form.weeks }}
+			{% for error in form.weeks.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.sum.label }}<br>
+			{{ form.sum }}
+			{% for error in form.sum.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}

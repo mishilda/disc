@@ -1,0 +1,14 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+	<h1>Клиенты</h1>
+	<hr>
+	<a href="{{ url_for('create_client') }}">Добавить клиента...</a>
+	{% for client in clients %}
+	<div>
+		<p><b>{{ client.name }}</b><a href="{{ url_for('client', id=client.id) }}">Подробнее...</a></p>
+		<p>+7 {{ client.phone }}</p>
+		<hr> 
+	</div>
+	{% endfor %}
+{% endblock %}

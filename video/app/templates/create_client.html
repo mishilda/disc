@@ -1,0 +1,42 @@
+﻿{% extends "base.html" %}
+{% block content %}
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<p>
+			{{ form.name.label }}<br>
+			{{ form.name(size=32) }}
+			{% for error in form.name.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.addr.label }}<br>
+			{{ form.addr }}
+			{% for error in form.addr.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.phone.label }}<br>
+			{{ form.phone }}
+			{% for error in form.phone.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.email.label }}<br>
+			{{ form.email }}
+			{% for error in form.email.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.passport.label }}<br>
+			{{ form.passport }}
+			{% for error in form.passport.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}

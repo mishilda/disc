@@ -1,0 +1,11 @@
+﻿{% extends "base.html" %}
+{% block content %}
+	<h1>Кассеты на руках</h1>
+	{% for issue in issues %}
+	<p>Клиент: {{ issue.client.data.name }}</p>
+	<p>Фильм: {{ issue.film.data.name }}</p>
+	<p>Дата выдачи: {{ issue.data.date}}</p>
+	<p>Срок: {{ issue.data.weeks }} нед.</p>
+	<hr>
+	{% endfor %}
+{% endblock %}

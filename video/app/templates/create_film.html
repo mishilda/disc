@@ -1,0 +1,49 @@
+﻿{% extends "base.html" %}
+{% block content %}
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<p>
+			{{ form.name.label }}<br>
+			{{ form.name }}
+			{% for error in form.name.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.studio.label }}<br>
+			{{ form.studio }}
+			{% for error in form.studio.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.year.label }}<br>
+			{{ form.year }}
+			{% for error in form.year.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.duration.label }}<br>
+			{{ form.duration }}
+			{% for error in form.duration.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.genre.label }}<br>
+			{{ form.genre(size=32) }}
+			{% for error in form.genre.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			{{ form.nom_count.label }}<br>
+			{{ form.nom_count }}
+			{% for error in form.nom_count.errors %}
+			<span style="color:red;">[{{ error }}]</span>
+			{% endfor %}
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}

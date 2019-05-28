@@ -1,0 +1,14 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+	<h1>Фильмы</h1>
+	<hr>
+	<a href="{{ url_for('create_film') }}">Добавить фильм..</a>
+	{% for film in films %}
+	<div>
+		<p><b>{{ film.name }}</b><a href="{{ url_for('film', id=film.id) }}">Подробнее...</a></p>
+		<p>{{ film.genre }}</p>
+		<hr> 
+	</div>
+	{% endfor %}
+{% endblock %}

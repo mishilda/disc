@@ -1,0 +1,36 @@
+﻿<html>
+	<head>
+		{% if title %}
+		<title>{{ title }}</title>
+		{% else %}
+		<title>Видеопрокат</title>
+		{% endif %}
+	</head>
+	<body>
+		<div>
+			<a href="{{ url_for('index') }}">Home</a>
+			{% if current_user.is_anonymous %}
+			<a href="{{ url_for('login') }}">Вход</a>
+			{% else %}
+			<a href="{{ url_for('new_issue') }}">Акт выдачи</a>
+			<a href="{{ url_for('new_receiving') }}">Акт приема</a>
+			<a href="{{ url_for('films') }}">Фильмы</a> 
+			<a href="{{ url_for('clients') }}">Клиенты</a>
+			<a href="{{ url_for('issues') }}">Кассеты на руках</a>
+			<a href="{{ url_for('logout') }}">Выход</a>
+			{% endif %}
+		</div>	
+		<hr>
+		
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li> {{ message }} </li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+		{% block content %}{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,27 @@
+﻿{% extends "base.html" %}
+{% block content %}
+
+	<h1>{{ client.data.name }}</h1>
+	<table style="position:absolute; left:20px;">
+		<tr valign="top">
+			<td>
+				<p>Адрес: </p>
+				<p>Телефон: </p>
+				<p>e-mail: </p>
+				<p>Номер паспорта: </p>
+			</td>
+			<td>
+				<p>{{ client.data.addr }}</p>
+				<p>{{ client.data.phone }}</p>
+				<p>{{ client.data.email }}</p>
+				<p>{{ client.data.passport }}</p>
+			<td>		
+		</tr>
+		<tr valign="top">
+			<td><a href="{{ url_for('edit_client', id=client.data.id) }}">Редактировать</a></td>
+		</tr>
+		<tr valign="top">
+			<td><a href="{{ url_for('delete_client', id=client.data.id) }}">Удалить</a></td>
+		</tr>
+	</table>
+{% endblock %}
